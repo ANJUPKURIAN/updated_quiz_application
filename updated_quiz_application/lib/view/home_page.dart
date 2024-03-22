@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:updated_quiz_application/core/constant/color_constant.dart';
+import 'package:updated_quiz_application/view/home_page/widget/chemistry_quiz.dart';
+import 'package:updated_quiz_application/view/home_page/widget/history_quiz.dart';
+import 'package:updated_quiz_application/view/home_page/widget/maths_quiz.dart';
+import 'package:updated_quiz_application/view/home_page/widget/sports_quiz.dart';
 //import 'package:updated_quiz_application/lib/core/constant/color_constant';
 
 class HomePage extends StatelessWidget {
@@ -59,16 +63,27 @@ class HomePage extends StatelessWidget {
                   // 1.column -- container with image
                   Column(
                     children: [
-                      Container(
-                       height: 150,
-                       width: 150,
-                       decoration: BoxDecoration(
-                       color: ColorConstant.primarywhite.withOpacity(.2),
-                      image: DecorationImage(
-                      image: AssetImage("asset/image/football_image.jpg"),
-                   ),
-                ),
-             ),
+                      InkWell(
+                        child: Container(
+                         height: 150,
+                         width: 150,
+                         decoration: BoxDecoration(
+                         color: ColorConstant.primarywhite.withOpacity(.2),
+                        image: DecorationImage(
+                        image: AssetImage("asset/image/football_image.jpg",
+                        ),
+                       ),
+                        ),
+                        ),
+                         onTap: (){
+                          Navigator.push(
+                            context, 
+                            MaterialPageRoute(
+                              builder: (context)=> SportsQuiz()));
+                        },
+                      
+
+                      ),
            
              Container(
                  child: Text(
@@ -87,16 +102,26 @@ class HomePage extends StatelessWidget {
                  // for image
                   Column(
                     children: [
-                      Container(
-                      height: 150,
-                       width: 150,
-                       decoration: BoxDecoration(
-                       color: ColorConstant.primarywhite.withOpacity(.2),
-                      image: DecorationImage(
-                      image: AssetImage("asset/image/lab_image.jpg"),
-                   ),
-                ),
-                ),
+                      InkWell(
+                        child: Container(
+                        height: 150,
+                         width: 150,
+                         decoration: BoxDecoration(
+                         color: ColorConstant.primarywhite.withOpacity(.2),
+                        image: DecorationImage(
+                        image: AssetImage(
+                          "asset/image/lab_image.jpg"),
+                            ),
+                          ),
+                        ),
+
+                              onTap: (){
+                          Navigator.push(
+                            context, 
+                            MaterialPageRoute(
+                              builder: (context)=> ChemistryQuiz()));
+                        },
+                      ),
 
                  // for text
                       Container(
@@ -124,16 +149,26 @@ class HomePage extends StatelessWidget {
                   // 1.column -- container with image
                   Column(
                     children: [
-                      Container(
-                       height: 150,
-                       width: 150,
-                       decoration: BoxDecoration(
-                       color: ColorConstant.primarywhite.withOpacity(.2),
-                      image: DecorationImage(
-                      image: AssetImage("asset/image/maths_image.jpg"),
-                   ),
-                ),
-             ),
+                      InkWell(
+                        child: Container(
+                         height: 150,
+                         width: 150,
+                         decoration: BoxDecoration(
+                         color: ColorConstant.primarywhite.withOpacity(.2),
+                        image: DecorationImage(
+                        image: AssetImage(
+                          "asset/image/maths_image.jpg"),
+                              ),
+                           ),
+                         ),
+
+                          onTap: (){
+                          Navigator.push(
+                            context, 
+                            MaterialPageRoute(
+                              builder: (context)=> MathsQuiz()));
+                        },
+                      ),
             // with text
 
              Container(
@@ -152,16 +187,25 @@ class HomePage extends StatelessWidget {
                  // for image
                   Column(
                     children: [
-                      Container(
-                      height: 150,
-                       width: 150,
-                       decoration: BoxDecoration(
-                       color: ColorConstant.primarywhite.withOpacity(.2),
-                      image: DecorationImage(
-                      image: AssetImage("asset/image/history_image.jpg"),
-                   ),
-                ),
-                ),
+                      InkWell(
+                        child: Container(
+                        height: 150,
+                         width: 150,
+                         decoration: BoxDecoration(
+                         color: ColorConstant.primarywhite.withOpacity(.2),
+                        image: DecorationImage(
+                        image: AssetImage(
+                          "asset/image/history_image.jpg"),
+                             ),
+                           ),
+                         ),
+                          onTap: (){
+                          Navigator.push(
+                            context, 
+                            MaterialPageRoute(
+                              builder: (context)=> HistoryQuiz()));
+                        },
+                      ),
 
                  // for text
                       Container(
@@ -178,12 +222,7 @@ class HomePage extends StatelessWidget {
                 ],
                ),
              
-                    
-                        
-                         
-                      
-          
-          ],
+         ],
            ),
                     
        ),
